@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Escola v1.0</string>
+    <string name="strN1">Nota 1</string>
+    <string name="strN2">Nota 2</string>
+    <string name="strcalc">Calcular</string>
+    <string name="strM">Média</string>
+    <string name="strS">Situação</string>
+    <string name="str0">0</string>
+    <string name="strSAp">Aprovado</string>
+    <string name="strSRe">Recuperação</string>
+    <string name="strSRp">Reprovado</string>
+    <string name="msgErro">Digite um valor</string>
+    <string name="msgAp">Parabéns!</string>
+    <string name="msgRe">Estude mais.</string>
+    <string name="msgRp">Mais um ano para o zé ruela.</string>
+</resources>

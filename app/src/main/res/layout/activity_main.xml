@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="115dp"
+        android:layout_height="52dp"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/laytudo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu" />
+
+    <ImageView
+        android:id="@+id/logomenu"
+        android:layout_width="75dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/escola1" />
+
+    <LinearLayout
+        android:id="@+id/laytudo"
+        android:layout_width="317dp"
+        android:layout_height="446dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu">
+
+        <LinearLayout
+            android:id="@+id/laydados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/edtN1"
+                android:text="@string/strN1" />
+
+            <EditText
+                android:id="@+id/edtN1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:labelFor="@id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/edtN2"
+                android:text="@string/strN2" />
+
+            <EditText
+                android:id="@+id/edtN2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:labelFor="@id/textView3" />
+
+            <Button
+                android:id="@+id/btncalc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:onClick="calcular"
+                android:shadowColor="@color/white"
+                android:text="@string/strcalc"
+                android:textColor="@color/white"
+                app:strokeColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layresultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/strM" />
+
+            <TextView
+                android:id="@+id/txtm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str0"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/strS" />
+
+            <TextView
+                android:id="@+id/txtSit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/strSAp"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imgSit"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/reprovado" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
