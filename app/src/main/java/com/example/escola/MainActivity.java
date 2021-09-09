@@ -2,9 +2,11 @@ package com.example.escola;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtM, txtSit;
     ImageView imgSit;
     LinearLayout layResult;
+    InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         txtSit = findViewById(R.id.txtSit);
         imgSit = findViewById(R.id.imgSit);
         layResult = findViewById(R.id.layresultado);
+        layResult.setVisibility(View.INVISIBLE);
+        imm = (InputMethodManager) getSystemService((Context.INPUT_METHOD_SERVICE));
     }
 
     public void calcular(View view) {
@@ -42,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
             edtN2.setError(getString(R.string.msgErro));
         }
         if (ok) {
+            imm.hideSoftInputFromWindow(edtN1.getWindowToken(), 0);
+            layResult.setVisibility(View.VISIBLE);
+
 
             float n1 = Float.parseFloat(edtN1.getText().toString());
             float n2 = Float.parseFloat(edtN2.getText().toString());
-            float m = (n1 = n2) / 2;
+            float m = (n1 + n2) / 2;
 
             txtM.setText(String.format("%.1f", m));
 
@@ -53,14 +61,17 @@ public class MainActivity extends AppCompatActivity {
                 txtSit.setText(getString(R.string.strSRp));
                 txtSit.setTextColor(Color.RED);
                 Toast.makeText(getApplicationContext(), getString(R.string.msgRp), Toast.LENGTH_LONG).show();
+                imgSit.setImageResource(R.drawable.reprovado);
             } else if (m < 7) {
                 txtSit.setText(getString(R.string.strSRe));
                 txtSit.setTextColor(Color.YELLOW);
                 Toast.makeText(getApplicationContext(), getString(R.string.msgRe), Toast.LENGTH_LONG).show();
+                imgSit.setImageResource(R.drawable.recuperacao);
             } else {
                 txtSit.setText(getString(R.string.strSAp));
                 txtSit.setTextColor(Color.BLUE);
                 Toast.makeText(getApplicationContext(), getString(R.string.msgAp), Toast.LENGTH_LONG).show();
+                imgSit.setImageResource(R.drawable.aprovado);
             }
         }
     }

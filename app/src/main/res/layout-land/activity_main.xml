@@ -8,41 +8,41 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="95dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="88dp"
-        android:contentDescription="@string/app_name"
+        android:layout_width="150dp"
+        android:layout_height="28dp"
         android:text="@string/app_name"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/laytudo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.596" />
 
     <ImageView
         android:id="@+id/logomenu"
-        android:layout_width="62dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="64dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        android:layout_width="75dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toTopOf="@+id/laytudo"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@drawable/escola1" />
 
     <LinearLayout
         android:id="@+id/laytudo"
-        android:layout_width="309dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_width="617dp"
+        android:layout_height="254dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logomenu">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/laydados"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -60,8 +60,7 @@
                 android:contentDescription="@string/strN1"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:labelFor="@id/textView2"
-                android:autofillHints="" />
+                android:labelFor="@id/textView2" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -77,8 +76,7 @@
                 android:contentDescription="@string/strN2"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:labelFor="@id/textView3"
-                android:autofillHints="" />
+                android:labelFor="@id/textView3" />
 
             <Button
                 android:id="@+id/btncalc"
@@ -94,8 +92,9 @@
 
         <LinearLayout
             android:id="@+id/layresultado"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:orientation="vertical">
 
             <TextView
